@@ -1,0 +1,294 @@
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+      margin: 0;
+    }
+    
+    /* Style the header */
+    .header {
+      padding: 2px;
+      text-align: center;
+      background: #1abc9c;
+      color: white;
+    }
+    
+    /* Increase the font size of the h1 element */
+    .header h1 {
+      font-size: 30px;
+    }
+    
+    /* Style the top navigation bar */
+    .navbar {
+      overflow: hidden;
+      background-color: #ad0f0f;
+    }
+    
+    /* Style the navigation bar links */
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    
+    /* Right-aligned link */
+    .navbar a.right {
+      float: right;
+    }
+    
+    /* Change color on hover */
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    /* Column container */
+    .row {  
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    /* Create two unequal columns that sits next to each other */
+    /* Sidebar/left column */
+    .side {
+      flex: 40%;
+      background-color: rgb(18, 18, 19);
+      padding: 20px;
+    }
+    
+    /* Main column */
+    .main {   
+      flex: 60%;
+      background-color:rgb(18, 18, 19);
+      padding: 20px;
+    }
+    
+    /* Fake image, just for this example */
+    .fakeimg {
+      background-color: #aaa;
+      width: 100%;
+      padding: 20px;
+    }
+    </style>
+    </head>
+    <body style="color:rgb(250, 249, 249);">
+    
+   
+    <div class="row">
+      <div class="side">
+        <div class="header">
+            <h1></h1>
+            <p>A Machine Learning Model to predict the CO<sub>2</sub> Emission from the Vehicle</p>
+          </div>
+        <h2>Abstract</h2>
+        <img src="co2_image.jpg" alt="Car Image" height="350"> 
+        <p><i> The problem statement was to build and train a ML model by using the provided data, which will further
+            predict the co2 emmission based on input data. As the data to be predected is a regression type of data, here as a primary
+         approach we have build a model by using Linear Regression Algorithm. While build the model we have used different EDA, Feature Engineering
+          and Feature selection techniques to improve the predection accuracy. currently the model performance wrt r2_socre is above 0.92 for testing 
+          dataset as well as training data set </i></p>
+        <h3>Data Set Information</h3>
+        <p>Understanding the Data
+            <br>Make : <i>Manufacturer of the vehicle</i>
+            <br> Model :	
+            <br> <i>4WD/4X4 = Four-wheel drive
+            <br>        AWD = All-wheel drive
+            <br>        FFV = Flexible-fuel vehicle
+            <br>       SWB = Short wheelbase
+            <br>       LWB = Long wheelbase
+            <br>       EWB = Extended wheelbase </i><br>
+            <br> Transmission :	
+            <br>    <i>A = automatic
+            <br>               AM = automated manual
+            <br>                AS = automatic with select shift
+            <br>                AV = continuously variable
+            <br>                M = manual
+            <br>                3 - 10 = Number of gears </i><br>
+            <br> Fuel type : 
+            <br> <i>X = regular gasoline
+            <br>          Z = premium gasoline
+            <br>          D = diesel
+            <br>          E = ethanol (E85)
+            <br>          N = natural gas </i><br>
+            <br>Fuel consumption City and highway :
+            <br><i> fuel consumption ratings are shown in 
+            <br>    litres per 100 kilometres (L/100 km) - the combined rating (55% city, 45% hwy) 
+                is shown in L/100 km and in miles per imperial gallon (mpg)</i><br>
+            <br>CO2 emissions : 
+            <br><i>	the tailpipe emissions of carbon dioxide (in grams per kilometre) 
+                for combined city and highway driving</i></p>
+        </div>
+      <div class="main" >
+        <marquee> <p style="color:rgb(216, 205, 205);"> To know about how the model is build <a href = # style="color:rgb(255, 254, 254);"> click here </a></p></marquee>
+        <h4>User Should Entre the Below fields to get the Approx amount of CO<sub>2</sub> Emitted from the Vehicle</h4>
+        <form method="POST" action="/life_ecpectancy_prediction">
+
+            <label style="color:rgb(255, 254, 254);">Country:</label>
+            <input type = "text" name = "Country" > <i style="color:rgb(0, 225, 255);">*Manufacturer of the vehicle</i> 
+            </select>
+    
+            <br>
+            <br>
+    
+            <label style="color:rgb(255, 254, 254);">Year:</label>
+            <input type = "text" name = "Year" > <i style="color:rgb(0, 225, 255);">*model of the vehicle</i> 
+            </select>
+           
+            <br>
+            <br>
+    
+            <label style="color:rgb(255, 254, 254);">Status:</label>
+            <select name = "Status">
+                <option value = "Developing">Developing</option>
+                <option value = "Developed">Developed</option>
+                
+    
+            </select> <i style="color:rgb(0, 225, 255);"> *Select vehical class from the dropdown list</i>
+    
+            <br>
+            <br>
+    
+            <label style="color:rgb(255, 254, 254);">Adult_Mortality:</label>
+            <input type = "text" name = "Adult_Mortality">
+            </select> <i style="color:rgb(0, 225, 255);"> *type engine size. e.g. 3.3 </i>
+    
+            <br>
+            <br>
+    
+            <label style="color:rgb(255, 254, 254);">infant_deaths:</label>
+            <input type = "text" name = "infant_deaths">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type No of cylinders e.g. 1 </i>
+    
+            <br>
+            <br>
+    
+            <label style="color:rgb(255, 254, 254);">Alcohol:</label>
+            <input type = "text" name = "Alcohol">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Transmission e.g. AS8 </i>
+    
+            <br>
+            <br>
+    
+            <label style="color:rgb(255, 254, 254);">percentage_expenditure:</label>
+            <input type = "text" name = "percentage_expenditure">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Transmission e.g. Z </i>
+    
+            <br>
+            <br>
+    
+            <label style="color:rgb(255, 254, 254);">Hepatitis_B:</label>
+            <input type = "text" name = "Hepatitis_B">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Fuel Consumption in City (L/100 km) e.g. 9.9 </i>
+    
+            <br>
+            <br>
+
+            <label style="color:rgb(255, 254, 254);">Measles:</label>
+            <input type = "text" name = "Measles">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Fuel Consumption in City (L/100 km) e.g. 9.9 </i>
+    
+            <br>
+            <br>
+    
+            <label style="color:rgb(255, 254, 254);">BMI:</label>
+            <input type = "text" name = "BMI">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Fuel Consumption on Hwy (L/100 km) e.g. 6.7 </i>
+    
+            <br>
+            <br>
+    
+            <label style="color:rgb(255, 254, 254);">under_five_deaths:</label>
+            <input type = "text" name = "under_five_deaths">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Fuel Consumption Comb (L/100 km) e.g. 8.5 </i>
+    
+            <br>
+            <br>
+
+            <label style="color:rgb(255, 254, 254);">Polio:</label>
+            <input type = "text" name = "Polio">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Fuel Consumption Comb (L/100 km) e.g. 8.5 </i>
+    
+            <br>
+            <br>
+    
+            <label style="color:rgb(255, 254, 254);">Total_expenditure:</label>
+            <input type = "text" name = "Total_expenditure">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Fuel_Consumption in (mpg) e.g. 33 </i>
+
+            <br>
+            <br>
+    
+            <label style="color:rgb(255, 254, 254);">Diphtheria:</label>
+            <input type = "text" name = "Diphtheria">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Fuel_Consumption in (mpg) e.g. 33 </i>
+
+            <br>
+            <br>
+    
+            <label style="color:rgb(255, 254, 254);">HIV_AIDS:</label>
+            <input type = "text" name = "HIV_AIDS">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Fuel_Consumption in (mpg) e.g. 33 </i>
+    
+            <br>
+            <br>
+            <label style="color:rgb(255, 254, 254);">GDP:</label>
+            <input type = "text" name = "GDP">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Fuel_Consumption in (mpg) e.g. 33 </i>
+    
+            <br>
+            <br>
+
+            <label style="color:rgb(255, 254, 254);">Population:</label>
+            <input type = "text" name = "Population">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Fuel_Consumption in (mpg) e.g. 33 </i>
+    
+            <br>
+            <br>
+
+            
+            <label style="color:rgb(255, 254, 254);">thinness__1_19_years:</label>
+            <input type = "text" name = "thinness__1_19_years">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Fuel_Consumption in (mpg) e.g. 33 </i>
+    
+            <br>
+            <br>
+
+            
+            <label style="color:rgb(255, 254, 254);">thinness_5_9_years:</label>
+            <input type = "text" name = "thinness_5_9_years">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Fuel_Consumption in (mpg) e.g. 33 </i>
+    
+            <br>
+            <br>
+
+            
+            <label style="color:rgb(255, 254, 254);">Income_composition_of_resources:</label>
+            <input type = "text" name = "Income_composition_of_resources">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Fuel_Consumption in (mpg) e.g. 33 </i>
+    
+            <br>
+            <br>
+
+            <label style="color:rgb(255, 254, 254);">Schooling:</label>
+            <input type = "text" name = "Schooling">
+            </select> <i style="color:rgb(0, 225, 255);"> *Type Fuel_Consumption in (mpg) e.g. 33 </i>
+    
+            <br>
+            <br>
+            <input type = "submit" value="SUBMIT">
+    
+            <br>
+    
+            <h2 style="color:rgb(252, 247, 251);"><strong> Life Expectancy based on input data is <b> {{ prediction }} g/km.</b> fakta </strong></h2>
+            <img src="7g7V.gif" alt="Car Image" height="450">
+        </div>
+    </div>
+    
+    </body>
+    </html>
